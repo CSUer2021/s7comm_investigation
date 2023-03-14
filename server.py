@@ -4,7 +4,8 @@ from snap7.server import Server
 from snap7.server import logger
 from snap7 import types
 
-SERVER_IP = '127.0.0.100'
+# SERVER_IP = '127.0.0.100'
+SERVER_IP = '127.0.0.1'
 SERVER_PORT = 102
 
 
@@ -25,7 +26,8 @@ def mainloop(tcp_port):
     server.register_area(types.srvAreaTM, 1, TMdata)
     server.register_area(types.srvAreaCT, 1, CTdata)
 
-    server.start_to('127.0.0.100', tcpport=tcp_port)
+    # server.start_to('127.0.0.100', tcpport=tcp_port)
+    server.start_to('127.0.0.1', tcpport=tcp_port)
     while True:
         while True:
             event = server.pick_event()
